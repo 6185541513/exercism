@@ -1,29 +1,20 @@
-import math
-
 
 class Matrix:
     def __init__(self, matrix_string):
         # create rows
-        rows_string = [[int(elem) for elem in row] for row in [rows_unformatted.split() for rows_unformatted in matrix_string.splitlines()]]
-
-        for elem in rows_string:
-            print("!!!!!!!!!!!"+str(elem))
+        self.rows = [[int(elem) for elem in row] for row in [rows_unformatted.split() for rows_unformatted in matrix_string.splitlines()]]
 
         # create columns
-        number_of_columns = len(rows_string[0])
-        columns_string = []
-        for i in range(number_of_columns):
+        self.columns = []
+        self.columns = []
+        for i in range(len(self.rows)):  # i = length of columns
             column = []
-            for row in rows_string:
-                column.append(row[i])
-            columns_string.append(column)
-
-        # string -> int
-        self.rows = list(map(int, rows_string))
-        self.columns = list(map(int, columns_string))
+            for j in range(len(self.rows[i])):  # j = number of columns
+                column.append()
+        self.columns.append(column)
 
     def row(self, index):
-        return self.rows[index]
+        return self.rows[index-1]
 
     def column(self, index):
-        return self.columns[index]
+        return self.columns[index-1]
