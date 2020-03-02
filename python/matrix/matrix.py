@@ -6,12 +6,12 @@ class Matrix:
 
         # create columns
         self.columns = []
-        self.columns = []
-        for i in range(len(self.rows)):  # i = length of columns
+        number_of_columns = len(self.rows[0])  # ugly but "works"..
+        for i in range(number_of_columns):  # 'i' keeps track of which index to use from each row to build the column
             column = []
-            for j in range(len(self.rows[i])):  # j = number of columns
-                column.append()
-        self.columns.append(column)
+            for row in self.rows:
+                column.append(row[i])
+            self.columns.append(column)
 
     def row(self, index):
         return self.rows[index-1]
